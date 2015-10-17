@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "LoadingView.h"
-
+#import "UIScrollView+SRefresh.h"
 
 #define ANGLE(angle) ((M_PI*angle)/180)
 
@@ -51,12 +51,19 @@
     
     
     
-    _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) style:UITableViewStylePlain];
     _tableview.delegate = self;
     _tableview.dataSource = self;
     _tableview.tableFooterView = [[UIView alloc] init];
-    
-    [self.view addSubview:_tableview];
+    [_tableview addRefreshBlock:^(PanState state) {
+        if (state == Pull) {
+            NSLog(@"1111");
+        }else if (state == Push) {
+            NSLog(@"2222");
+        }
+    }];
+     
+     [self.view addSubview:_tableview];
     
     
     _loading = [PullLoadingView share];
@@ -71,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -90,27 +97,7 @@
     
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (_tableview.dragging) {
-        [_loading startPullLoadingWithView:_tableview withPullDistance:scrollView.contentOffset.y];
-        
-    }else{
-        if (scrollView.contentOffset.y == 0) {
-            [_loading stopLoading];
-        }
-        
-    }
-   
-}
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (scrollView.contentOffset.y < - 100) {
-        [UIView animateWithDuration:0.25 animations:^{
-            _tableview.contentInset = UIEdgeInsetsMake(60, 0, 0, 0);
-        }];
-        
-    }
-}
 - (void)slideCLick {
     
     LoadingView * loading = [LoadingView share];
@@ -119,20 +106,13 @@
     loading.center = self.view.center;
     
     [loading startLoading];
-    
-
-    
 }
 
 - (void)rightCLick {
     LoadingView * loading = [LoadingView share];
     [loading stopLoading];
     
-    
-    [UIView animateWithDuration:0.25 animations:^{
-        _tableview.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    }];
-    
+    [_tableview stopRefresh];
 }
 
 - (void)didReceiveMemoryWarning {

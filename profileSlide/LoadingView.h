@@ -10,6 +10,7 @@
 
 @interface LoadingView : UIView
 
+@property (nonatomic,assign) BOOL isLoading;
 
 + (instancetype)share;
 
@@ -41,6 +42,7 @@
 
 @interface PullLoadingView : UIView
 
+@property (nonatomic,assign) BOOL isPullLoading;
 
 + (instancetype)share;
 

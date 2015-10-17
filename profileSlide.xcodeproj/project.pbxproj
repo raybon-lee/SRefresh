@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		122627031BD0A31B008439AC /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 122627021BD0A31B008439AC /* LoadingView.m */; settings = {ASSET_TAGS = (); }; };
+		1226270F1BD0FCE7008439AC /* UIScrollView+SRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 1226270E1BD0FCE7008439AC /* UIScrollView+SRefresh.m */; settings = {ASSET_TAGS = (); }; };
 		126592281BCBA3AE00015776 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 126592271BCBA3AE00015776 /* main.m */; };
 		1265922B1BCBA3AE00015776 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1265922A1BCBA3AE00015776 /* AppDelegate.m */; };
 		1265922E1BCBA3AE00015776 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1265922D1BCBA3AE00015776 /* ViewController.m */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		122627011BD0A31B008439AC /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		122627021BD0A31B008439AC /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		1226270D1BD0FCE7008439AC /* UIScrollView+SRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SRefresh.h"; sourceTree = "<group>"; };
+		1226270E1BD0FCE7008439AC /* UIScrollView+SRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SRefresh.m"; sourceTree = "<group>"; };
 		126592231BCBA3AE00015776 /* profileSlide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = profileSlide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		126592271BCBA3AE00015776 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		126592291BCBA3AE00015776 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				126592261BCBA3AE00015776 /* Supporting Files */,
 				122627011BD0A31B008439AC /* LoadingView.h */,
 				122627021BD0A31B008439AC /* LoadingView.m */,
+				1226270D1BD0FCE7008439AC /* UIScrollView+SRefresh.h */,
+				1226270E1BD0FCE7008439AC /* UIScrollView+SRefresh.m */,
 			);
 			path = profileSlide;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				TargetAttributes = {
 					126592221BCBA3AE00015776 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = UQSUXJQD38;
 					};
 					1265923B1BCBA3AE00015776 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -219,6 +225,7 @@
 				1265922E1BCBA3AE00015776 /* ViewController.m in Sources */,
 				122627031BD0A31B008439AC /* LoadingView.m in Sources */,
 				1265922B1BCBA3AE00015776 /* AppDelegate.m in Sources */,
+				1226270F1BD0FCE7008439AC /* UIScrollView+SRefresh.m in Sources */,
 				126592281BCBA3AE00015776 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = profileSlide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ouer.com.profileSlide;
@@ -356,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = profileSlide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ouer.com.profileSlide;
