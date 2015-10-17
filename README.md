@@ -1,2 +1,2 @@
-# loadingAnimation
-加载动画、下拉动画
+# SRefresh
+下拉、上拉刷新，loading动画
