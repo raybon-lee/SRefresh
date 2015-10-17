@@ -16,7 +16,6 @@
 {
     UIView * iview;
     UITableView * _tableview;
-    PullLoadingView * _loading;
 }
 @end
 
@@ -64,11 +63,6 @@
     }];
      
      [self.view addSubview:_tableview];
-    
-    
-    _loading = [PullLoadingView share];
-    _loading.frame = CGRectMake(0, 0, 30, 30);
-    _loading.center = CGPointMake(self.view.center.x, -20);
     
 }
 
